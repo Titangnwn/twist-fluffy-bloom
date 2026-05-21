@@ -1,138 +1,495 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Twist Fluffy Bloom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twist Fluffy Bloom | Buket & Gantungan Kunci Pipe Cleaner</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Quicksand', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              light: '#fff8dc',
+              pink: '#ffb6c1',
+              dark: '#5a3e2b',
+              accent: '#d4a373',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #fff8dc; /* warna latar lembut sesuai logo */
+      background-color: #fffaf0;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+
+    @keyframes blob {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
     }
   </style>
 </head>
-<body class="text-gray-800">
 
-  <!-- HERO SECTION -->
-  <div 
-    class="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center"
-    style="background-image: url('Logo Profile Twist Fluffy Bloom.png');"
-  >
-    <div class="bg-[#fff8dc]/80 p-6 rounded-xl text-center max-w-xl shadow-lg">
-      <h1 class="text-4xl font-bold text-[#5a3e2b] mb-4">Twist Fluffy Bloom</h1>
-      <p class="text-lg leading-relaxed mb-6">
-        Selamat datang di <span class="font-semibold">Twist Fluffy Bloom</span>! Kami menjual kerajinan tangan unik berbahan <em>pipe cleaner</em> (kawat bulu) yang dibuat penuh cinta & kreativitas. Temukan keindahan dalam tiap lilitan!
-      </p>
-      <!-- Tombol ke Produk -->
-      <button id="scrollToProduk" class="bg-[#5a3e2b] text-white px-6 py-3 rounded-lg hover:bg-[#7a5b45] transition font-semibold shadow-md">
-        Lihat Produk
-      </button>
-    </div>
-  </div>
+<body class="text-gray-800 antialiased selection:bg-brand-pink selection:text-white">
 
-  <!-- PRODUCT SECTION -->
-  <section id="produk" class="py-16 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center text-[#5a3e2b] mb-10">Pilihan Produk</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Produk 1 -->
-      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/300x200?text=Produk+1" alt="Produk 1" class="w-full h-48 object-cover rounded">
-        <h3 class="mt-4 font-semibold text-lg">Bunga Pipe Cleaner</h3>
-        <p class="text-sm text-gray-600">Kerajinan bunga kecil dengan warna cerah.</p>
-        <a href="bunga.html" class="mt-2 inline-block bg-[#5a3e2b] text-white px-4 py-2 rounded hover:bg-[#7a5b45] transition">Lihat Detail</a>
-      </div>
-
-      <!-- Produk 2 -->
-      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/300x200?text=Produk+2" alt="Produk 2" class="w-full h-48 object-cover rounded">
-        <h3 class="mt-4 font-semibold text-lg">Gantungan</h3>
-        <p class="text-sm text-gray-600">Mini karakter binatang dari pipe cleaner.</p>
-        <a href="gantungan.html" class="mt-2 inline-block bg-[#5a3e2b] text-white px-4 py-2 rounded hover:bg-[#7a5b45] transition">Lihat Detail</a>
-      </div>
-
-      <!-- Produk 3 -->
-      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/300x200?text=Produk+3" alt="Produk 3" class="w-full h-48 object-cover rounded">
-        <h3 class="mt-4 font-semibold text-lg">Hiasan ruangan</h3>
-        <p class="text-sm text-gray-600">Buket pipe cleaner warna pastel.</p>
-        <a href="hiasan.html" class="mt-2 inline-block bg-[#5a3e2b] text-white px-4 py-2 rounded hover:bg-[#7a5b45] transition">Lihat Detail</a>
-      </div>
-
-      <!-- Produk 4 -->
-      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/300x200?text=Produk+4" alt="Produk 4" class="w-full h-48 object-cover rounded">
-        <h3 class="mt-4 font-semibold text-lg">Mini Doll</h3>
-        <p class="text-sm text-gray-600">Lucu & lembut, cocok untuk hadiah.</p>
-        <a href="doll.html" class="mt-2 inline-block bg-[#5a3e2b] text-white px-4 py-2 rounded hover:bg-[#7a5b45] transition">Lihat Detail</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontak Section -->
-  <section id="contact" class="py-10 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-center text-2xl font-bold mb-8">Kontak Kami</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="Ig.png" alt="Instagram" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">Instagram</h3>
-                <p>@twist.fluffy.bloom</p>
-                <a href="https://www.instagram.com/twist.fluffy.bloom?igsh=bWt6czVoOHllb2t5&utm_source=qr" class="text-blue-500 mt-2">Follow Kami</a>
-            </div>
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="wa.png" alt="WhatsApp" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">WhatsApp</h3>
-                <p>+62 815-729-2066</p>
-                <a href="https://wa.me/6281572962066" class="text-green-500 mt-2">Chat Kami</a>
-            </div>
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="email.jpeg" alt="Email" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">Email</h3>
-                <p>twistfluffybloom@gmail.com</p>
-                <a href="mailto:twistfluffybloom@gmail.com" class="text-red-500 mt-2">Email Kami</a>
-            </div>
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="facebook.png" alt="Facebook" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">Facebook</h3>
-                <p>twist.fluffy.bloom</p>
-                <a href="https://www.facebook.com/share/1K6bqNB4qb/?mibextid=wwXIfr" class="text-red-500 mt-2">Facebook</a>
-            </div>
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="tiktok.png" alt="TikTok" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">TikTok</h3>
-                <p>twist.fluffy.bloom</p>
-                <a href="https://www.tiktok.com/@twist.fluffy.bloom?_t=ZS-8ycbyoml7o7&_r=1" class="text-red-500 mt-2">TikTok</a>
-            </div>
-            <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
-                <img src="youtube.png" alt="YouTube" class="w-12 h-12 mb-4">
-                <h3 class="text-lg font-semibold">YouTube</h3>
-                <p>twist.fluffy.bloom</p>
-                <a href="https://youtube.com/@twistfluffybloom?si=4YsQCUGg_3qgZ93N" class="text-red-500 mt-2">YouTube</a>
-            </div>
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 glass-card border-b border-white/50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0 flex items-center gap-3">
+          <img class="h-10 w-10 rounded-full border-2 border-brand-pink object-cover"
+            src="Logo Profile Twist Fluffy Bloom.png" alt="Logo">
+          <span class="font-bold text-xl text-brand-dark hidden sm:block">Twist Fluffy Bloom</span>
         </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="text-brand-dark hover:text-brand-pink transition font-semibold">Beranda</a>
+          <a href="#about" class="text-brand-dark hover:text-brand-pink transition font-semibold">Tentang</a>
+          <a href="#products" class="text-brand-dark hover:text-brand-pink transition font-semibold">Produk</a>
+          <a href="#contact" class="text-brand-dark hover:text-brand-pink transition font-semibold">Kontak</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <a href="#products" class="bg-brand-pink text-white px-4 py-2 rounded-full text-sm font-bold">Pesan</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="relative pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden min-h-screen flex items-center bg-brand-light">
+    <!-- Decorative blurs -->
+    <div
+      class="absolute -top-24 -right-24 w-96 h-96 bg-brand-pink rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob z-0">
+    </div>
+    <div
+      class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-accent rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000 z-0">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <div
+            class="inline-block px-4 py-2 rounded-full bg-brand-pink/20 text-brand-dark font-semibold mb-6 shadow-sm">
+            ✨ 100% Handmade with Love
+          </div>
+          <h1 class="text-5xl lg:text-6xl font-bold text-brand-dark leading-tight mb-6">
+            Kreasi Indah dari <br><span class="text-brand-pink">Pipe Cleaner</span>
+          </h1>
+          <p class="text-lg text-gray-800 font-medium mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Hadirkan kebahagiaan melalui buket bunga cantik, keychain unik, dan berbagai kerajinan estetik lainnya.
+            Semua dibuat khusus untuk momen spesialmu!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="#products"
+              class="px-8 py-4 bg-brand-dark text-white rounded-full font-bold shadow-lg hover:bg-brand-accent hover:-translate-y-1 transition-all duration-300 text-center">
+              Lihat Koleksi
+            </a>
+            <a href="#contact"
+              class="px-8 py-4 bg-white text-brand-dark border-2 border-brand-dark rounded-full font-bold shadow-lg hover:bg-brand-light hover:-translate-y-1 transition-all duration-300 text-center">
+              Pesan Sekarang
+            </a>
+          </div>
+        </div>
+        <div class="relative hidden lg:block mt-10 lg:mt-0">
+          <img src="poster.png" alt="Koleksi Twist Fluffy Bloom"
+            class="rounded-3xl shadow-2xl object-cover w-full h-[650px] xl:h-[750px] border-4 border-white transform rotate-3 hover:rotate-0 transition duration-500">
+          <!-- Floating elements -->
+          <div
+            class="absolute -bottom-6 -left-6 glass-card p-4 rounded-xl shadow-xl flex items-center gap-4 animate-bounce"
+            style="animation-duration: 3s;">
+            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-2xl">💐</div>
+            <div>
+              <p class="text-sm font-bold text-brand-dark">Premium Quality</p>
+              <p class="text-xs text-gray-500">Bulu lembut & awet</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-    
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-4">
-    <div class="container mx-auto text-center">
-        <p>&copy; 2025 Twist Fluffy Bloom. All Rights Reserved.</p>
-    </div>
-  </footer>
 
-  <!-- JavaScript Smooth Scroll -->
-  <script>
-    document.getElementById("scrollToProduk").addEventListener("click", function () {
-      const produkSection = document.getElementById("produk");
-      window.scrollTo({
-        top: produkSection.offsetTop,
-        behavior: "smooth"
-      });
-    });
-  </script>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-brand-dark mb-4">Mengapa Memilih Kami?</h2>
+        <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full mb-6"></div>
+        <p class="text-gray-600 text-lg">Twist Fluffy Bloom berdedikasi menciptakan karya seni mungil yang tak akan
+          pernah layu. Kami mengubah kawat bulu biasa menjadi mahakarya penuh makna.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="glass-card bg-brand-light/30 p-8 rounded-2xl text-center hover:-translate-y-2 transition duration-300 shadow-sm hover:shadow-md border border-brand-pink/20">
+          <div
+            class="w-16 h-16 bg-brand-pink/20 text-brand-pink rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+            🎀</div>
+          <h3 class="text-xl font-bold text-brand-dark mb-3">Custom Design</h3>
+          <p class="text-gray-600">Pilih warna dan model sesuai keinginanmu. Cocok untuk hadiah wisuda, ulang tahun,
+            atau sekadar kejutan manis.</p>
+        </div>
+        <div
+          class="glass-card bg-brand-light/30 p-8 rounded-2xl text-center hover:-translate-y-2 transition duration-300 shadow-sm hover:shadow-md border border-brand-accent/20">
+          <div
+            class="w-16 h-16 bg-brand-accent/20 text-brand-accent rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+            ⏳</div>
+          <h3 class="text-xl font-bold text-brand-dark mb-3">Tahan Lama</h3>
+          <p class="text-gray-600">Berbeda dengan bunga asli, kerajinan pipe cleaner kami awet selamanya. Kenangan yang
+            tak lekang oleh waktu.</p>
+        </div>
+        <div
+          class="glass-card bg-brand-light/30 p-8 rounded-2xl text-center hover:-translate-y-2 transition duration-300 shadow-sm hover:shadow-md border border-brand-dark/20">
+          <div
+            class="w-16 h-16 bg-brand-dark/20 text-brand-dark rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+            💖</div>
+          <h3 class="text-xl font-bold text-brand-dark mb-3">Handmade Detail</h3>
+          <p class="text-gray-600">Setiap lilitan dikerjakan secara manual dengan tingkat ketelitian tinggi untuk hasil
+            yang sempurna & proporsional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-20 bg-brand-light/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col sm:flex-row justify-between items-center sm:items-end mb-12 text-center sm:text-left">
+        <div class="mb-4 sm:mb-0">
+          <h2 class="text-3xl lg:text-4xl font-bold text-brand-dark mb-4">Koleksi Terfavorit</h2>
+          <div class="w-24 h-1 bg-brand-pink rounded-full mx-auto sm:mx-0"></div>
+        </div>
+        <div>
+          <p class="text-gray-600 font-medium bg-white px-4 py-2 rounded-full shadow-sm">Bawa pulang keajaiban kecil
+            hari ini.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+
+        <!-- Buket Keychain -->
+        <div
+          class="bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-brand-pink/30 hover:-translate-y-4 transition-all duration-500 group border-2 border-transparent hover:border-brand-pink/20 relative">
+          <!-- Cute hover floating element -->
+          <div
+            class="absolute -top-10 right-4 text-3xl opacity-0 group-hover:opacity-100 group-hover:top-4 transition-all duration-500 z-20 animate-bounce"
+            style="animation-duration: 2s;">🎀</div>
+
+          <div class="relative h-64 sm:h-72 overflow-hidden rounded-t-[2rem]">
+            <img src="Handcraft 1.png" alt="Buket Keychain"
+              class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-2 transition-transform duration-700 ease-out">
+          </div>
+          <div class="p-6 sm:p-8 relative">
+            <h3 class="text-2xl font-bold text-brand-dark mb-2 group-hover:text-brand-pink transition-colors">Buket
+              Keychain</h3>
+            <p class="text-gray-600 mb-4 text-sm line-clamp-3">Kombinasi unik antara buket bunga mini dan gantungan
+              kunci praktis. Cantik untuk dipajang, fungsional untuk dibawa-bawa.</p>
+            <div
+              class="space-y-2 mb-6 bg-brand-light/40 p-4 rounded-2xl border border-brand-light/50 group-hover:bg-brand-pink/5 transition-colors">
+              <div class="flex items-center text-sm text-gray-600"><span
+                  class="mr-2 text-brand-pink font-bold text-lg">✨</span> Warna bisa dicustom</div>
+              <div class="flex items-center text-sm text-gray-600"><span
+                  class="mr-2 text-brand-pink font-bold text-lg">💌</span> Free kartu ucapan</div>
+            </div>
+            <a href="https://wa.me/6281572962066?text=Halo%20saya%20ingin%20memesan%20Buket%20Keychain"
+              class="block w-full text-center py-4 bg-brand-pink text-white rounded-2xl font-bold hover:bg-brand-dark hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+              <span>Pesan Sekarang</span>
+              <span class="text-xl group-hover:translate-x-1 transition-transform">🌸</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gantungan Kunci -->
+        <div
+          class="bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-brand-accent/30 hover:-translate-y-4 transition-all duration-500 group border-2 border-transparent hover:border-brand-accent/20 relative">
+          <!-- Cute hover floating element -->
+          <div
+            class="absolute -top-10 right-4 text-3xl opacity-0 group-hover:opacity-100 group-hover:top-4 transition-all duration-500 z-20 animate-bounce"
+            style="animation-duration: 2.5s;">🧸</div>
+
+          <div class="relative h-64 sm:h-72 overflow-hidden rounded-t-[2rem]">
+            <img src="Handcraft  2.png" alt="Gantungan Kunci Karakter"
+              class="w-full h-full object-cover group-hover:scale-110 group-hover:-rotate-2 transition-transform duration-700 ease-out">
+          </div>
+          <div class="p-6 sm:p-8 relative">
+            <h3 class="text-2xl font-bold text-brand-dark mb-2 group-hover:text-brand-accent transition-colors">
+              Gantungan Kunci</h3>
+            <p class="text-gray-600 mb-4 text-sm line-clamp-3">Gantungan kunci bentuk hewan, karakter lucu, atau bunga
+              tunggal yang sangat menggemaskan untuk aksesoris tas atau kunci.</p>
+            <div
+              class="space-y-2 mb-6 bg-brand-light/40 p-4 rounded-2xl border border-brand-light/50 group-hover:bg-brand-accent/5 transition-colors">
+              <div class="flex items-center text-sm text-gray-600"><span
+                  class="mr-2 text-brand-accent font-bold text-lg">🔑</span> Ring tebal anti karat</div>
+              <div class="flex items-center text-sm text-gray-600"><span
+                  class="mr-2 text-brand-accent font-bold text-lg">🧵</span> Karakter 3D padat & rapi</div>
+            </div>
+            <a href="https://wa.me/6281572962066?text=Halo%20saya%20ingin%20memesan"
+              class="block w-full text-center py-4 bg-brand-accent text-white rounded-2xl font-bold hover:bg-brand-dark hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+              <span>Pesan Sekarang</span>
+              <span class="text-xl group-hover:translate-x-1 transition-transform">🐾</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Buket Bunga Besar (Best Seller) -->
+        <div
+          class="bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-brand-pink/40 hover:-translate-y-4 transition-all duration-500 group border-2 border-brand-pink/30 hover:border-brand-pink relative transform sm:-translate-y-2">
+          <!-- BEST SELLER BADGE (Moved here) -->
+          <div class="absolute top-4 left-4 z-20">
+            <div
+              class="bg-gradient-to-r from-brand-pink to-[#ff8da1] text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg flex items-center gap-2 animate-pulse">
+              <span>🌟 Best Seller</span>
+            </div>
+          </div>
+
+          <!-- Cute hover floating element -->
+          <div
+            class="absolute -top-10 right-4 text-3xl opacity-0 group-hover:opacity-100 group-hover:top-4 transition-all duration-500 z-20 animate-bounce"
+            style="animation-duration: 1.5s;">💐</div>
+
+          <div class="relative h-64 sm:h-72 overflow-hidden rounded-t-[2rem]">
+            <img src="Handcraft 3.png" alt="Buket Bunga Premium"
+              class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-2 transition-transform duration-700 ease-out">
+            <!-- Overlay gradient for extra premium feel -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 relative">
+            <h3 class="text-2xl font-bold text-brand-dark mb-2 group-hover:text-brand-pink transition-colors">Buket
+              Premium</h3>
+            <p class="text-gray-600 mb-4 text-sm line-clamp-3">Rangkaian bunga mawar, tulip, atau daisy dari pipe
+              cleaner ukuran besar dengan wrapping elegan khas florist profesional.</p>
+            <div
+              class="space-y-2 mb-6 bg-brand-light/40 p-4 rounded-2xl border border-brand-pink/20 group-hover:bg-brand-pink/10 transition-colors">
+              <div class="flex items-center text-sm text-gray-600"><span
+                  class="mr-2 text-brand-pink font-bold text-lg">💝</span> Premium Wrapping</div>
+              <div class="flex items-center text-sm text-gray-600"><span
+                  class="mr-2 text-brand-pink font-bold text-lg">🎓</span> Cocok untuk Wisuda/Anniv</div>
+            </div>
+            <a href="https://wa.me/6281572962066?text=Halo%20saya%20ingin%20memesan%20Buket%20Bunga%20Premium"
+              class="block w-full text-center py-4 bg-brand-pink text-white rounded-2xl font-bold hover:bg-brand-dark hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+              <span>Pesan Sekarang</span>
+              <span class="text-xl group-hover:translate-x-1 transition-transform">💖</span>
+            </a>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-16 bg-white border-t border-brand-light">
+    <div class="max-w-7xl mx-auto px-4 overflow-hidden">
+      <h3 class="text-center text-3xl font-bold text-brand-dark mb-2">Galeri Kreasi Kami</h3>
+      <p class="text-center text-gray-500 mb-10">Intip beberapa karya yang pernah kami buat</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="overflow-hidden rounded-2xl shadow-sm border border-brand-light/50 group">
+          <img src="Handcraft 4.png" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+        </div>
+        <div class="overflow-hidden rounded-2xl shadow-sm border border-brand-light/50 group">
+          <img src="Handcraft 5.png" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+        </div>
+        <div class="overflow-hidden rounded-2xl shadow-sm border border-brand-light/50 group">
+          <img src="Handcraft 8.png" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+        </div>
+        <div
+          class="overflow-hidden rounded-2xl shadow-sm border border-brand-light/50 group bg-brand-light flex items-center justify-center p-4">
+          <img src="Logo Profile Twist Fluffy Bloom.png"
+            class="w-24 h-24 object-contain group-hover:scale-110 transition duration-500 filter drop-shadow-md">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cara Pemesanan Section -->
+  <section class="py-20 bg-brand-light/30 border-t border-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-brand-dark mb-4">Cara Pemesanan</h2>
+        <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full mb-6"></div>
+        <p class="text-gray-600 text-lg">Pesan karya impianmu dalam 4 langkah mudah!</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div
+          class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group border border-transparent hover:border-brand-pink/30">
+          <div
+            class="w-16 h-16 bg-brand-pink/20 text-brand-pink rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 group-hover:bg-brand-pink group-hover:text-white transition-all shadow-sm">
+            1</div>
+          <h3 class="font-bold text-brand-dark mb-2 text-xl">Pilih Produk</h3>
+          <p class="text-sm text-gray-600">Pilih model buket atau gantungan kunci yang kamu suka dari katalog.</p>
+        </div>
+        <!-- Step 2 -->
+        <div
+          class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group border border-transparent hover:border-brand-accent/30">
+          <div
+            class="w-16 h-16 bg-brand-accent/20 text-brand-accent rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 group-hover:bg-brand-accent group-hover:text-white transition-all shadow-sm">
+            2</div>
+          <h3 class="font-bold text-brand-dark mb-2 text-xl">Chat Admin</h3>
+          <p class="text-sm text-gray-600">Klik tombol WhatsApp untuk konsultasi warna dan request tambahan.</p>
+        </div>
+        <!-- Step 3 -->
+        <div
+          class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group border border-transparent hover:border-brand-dark/30">
+          <div
+            class="w-16 h-16 bg-brand-dark/20 text-brand-dark rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 group-hover:bg-brand-dark group-hover:text-white transition-all shadow-sm">
+            3</div>
+          <h3 class="font-bold text-brand-dark mb-2 text-xl">Proses Pembuatan</h3>
+          <p class="text-sm text-gray-600">Kami akan merangkai pesananmu dengan cinta (Pengerjaan 1-3 hari).</p>
+        </div>
+        <!-- Step 4 -->
+        <div
+          class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group border border-transparent hover:border-green-300">
+          <div
+            class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 group-hover:bg-green-500 group-hover:text-white transition-all shadow-sm">
+            4</div>
+          <h3 class="font-bold text-brand-dark mb-2 text-xl">Pesanan Dikirim</h3>
+          <p class="text-sm text-gray-600">Duduk manis, buket cantikmu siap dikirim dengan aman ke alamat tujuan!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer -->
+  <section id="contact" class="bg-brand-dark text-brand-light py-20 relative overflow-hidden">
+    <div
+      class="absolute top-0 right-0 w-64 h-64 bg-brand-pink rounded-full mix-blend-multiply filter blur-3xl opacity-20">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-white mx-auto">Mari Buat Sesuatu yang <br class="sm:hidden"><span
+          class="text-brand-pink">Spesial</span></h2>
+      <p class="text-brand-light/80 mb-12 text-lg max-w-2xl mx-auto">Punya ide unik? Atau ingin memesan dalam jumlah banyak
+        untuk souvenir? Jangan ragu untuk menghubungi kami langsung melalui kontak di bawah ini.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6289656169595" target="_blank"
+          class="flex flex-col items-center justify-between p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-brand-pink/50 hover:bg-white/10 transition-all duration-300 group shadow-lg hover:shadow-brand-pink/10 hover:-translate-y-2">
+          <div class="flex flex-col items-center text-center gap-4">
+            <div
+              class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#25D366] transition duration-300 shadow-inner">
+              <img src="wa.png" class="w-9 h-9 object-cover rounded-full">
+            </div>
+            <div>
+              <p class="text-sm text-brand-light/60 font-semibold tracking-wider uppercase">WhatsApp</p>
+              <p class="font-bold text-white text-xl mt-1">+62 815-729-2066</p>
+            </div>
+          </div>
+          <span class="mt-6 inline-flex items-center text-sm font-semibold text-brand-pink group-hover:text-white transition-colors duration-300">
+            Hubungi via WA <span class="ml-1 group-hover:translate-x-1 transition-transform">➡️</span>
+          </span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/twist.fluffy.bloom" target="_blank"
+          class="flex flex-col items-center justify-between p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-brand-pink/50 hover:bg-white/10 transition-all duration-300 group shadow-lg hover:shadow-brand-pink/10 hover:-translate-y-2">
+          <div class="flex flex-col items-center text-center gap-4">
+            <div
+              class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#E1306C] transition duration-300 shadow-inner">
+              <img src="Ig.png" class="w-9 h-9 object-cover rounded-full">
+            </div>
+            <div>
+              <p class="text-sm text-brand-light/60 font-semibold tracking-wider uppercase">Instagram</p>
+              <p class="font-bold text-white text-xl mt-1">@twist.fluffy.bloom</p>
+            </div>
+          </div>
+          <span class="mt-6 inline-flex items-center text-sm font-semibold text-brand-pink group-hover:text-white transition-colors duration-300">
+            Kunjungi Profil <span class="ml-1 group-hover:translate-x-1 transition-transform">➡️</span>
+          </span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:twistfluffybloom@gmail.com"
+          class="flex flex-col items-center justify-between p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-brand-pink/50 hover:bg-white/10 transition-all duration-300 group shadow-lg hover:shadow-brand-pink/10 hover:-translate-y-2">
+          <div class="flex flex-col items-center text-center gap-4">
+            <div
+              class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#EA4335] transition duration-300 shadow-inner">
+              <img src="email.jpeg" class="w-9 h-9 object-cover rounded-full">
+            </div>
+            <div>
+              <p class="text-sm text-brand-light/60 font-semibold tracking-wider uppercase">Email</p>
+              <p class="font-bold text-white text-xl mt-1">twistfluffybloom@gmail.com</p>
+            </div>
+          </div>
+          <span class="mt-6 inline-flex items-center text-sm font-semibold text-brand-pink group-hover:text-white transition-colors duration-300">
+            Kirim Email <span class="ml-1 group-hover:translate-x-1 transition-transform">➡️</span>
+          </span>
+        </a>
+      </div>
+
+      <div
+        class="mt-20 pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <img src="Logo Profile Twist Fluffy Bloom.png" alt="Logo"
+            class="w-10 h-10 rounded-full border-2 border-white/30 p-0.5 bg-white">
+          <span class="font-bold text-white tracking-wide text-lg">Twist Fluffy Bloom</span>
+        </div>
+        <p class="text-brand-light/50 text-sm">&copy; 2025 Twist Fluffy Bloom. Dibuat dengan 💖</p>
+        <div class="flex gap-4">
+          <a href="https://www.tiktok.com/@twist.fluffy.bloom"
+            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition duration-300 group"><img
+              src="tiktok.png" class="w-5 h-5 rounded-full object-cover filter grayscale group-hover:grayscale-0"></a>
+          <a href="https://www.facebook.com/share/1K6bqNB4qb"
+            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#1877F2] transition duration-300 group"><img
+              src="facebook.png" class="w-5 h-5 rounded-full object-cover filter grayscale group-hover:grayscale-0"></a>
+          <a href="https://youtube.com/@twistfluffybloom"
+            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#FF0000] transition duration-300 group"><img
+              src="youtube.png" class="w-5 h-5 rounded-full object-cover filter grayscale group-hover:grayscale-0"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6289656169595" target="_blank"
+    class="fixed bottom-6 right-6 z-50 bg-white p-1 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-300 group"
+    title="Chat WhatsApp">
+    <div class="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-75"></div>
+    <div class="bg-[#25D366] rounded-full p-2 relative z-10 flex items-center gap-2 pr-4 pl-3">
+      <img src="wa.png" alt="WhatsApp" class="w-8 h-8 object-cover rounded-full">
+      <span
+        class="text-white font-bold hidden sm:block whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-xs transition-all duration-500 ease-in-out">Chat
+        Kami!</span>
+    </div>
+  </a>
 
 </body>
+
 </html>
